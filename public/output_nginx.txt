@@ -1,0 +1,59 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Include OS-specific variables.] ***
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Define nginx_user.] *********
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : include_tasks] **************
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : include_tasks] **************
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : include_tasks] **************
+included: /home/aguirchams/ansible/ansible-roles/applications/webserver/nginx/tasks/setup.yml for worker
+
+TASK [ansible-roles/applications/webserver/nginx : Update apt cache.] **********
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Ensure nginx is installed.] ***
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : include_tasks] **************
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : include_tasks] **************
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : include_tasks] **************
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Remove default nginx vhost config file (if configured).] ***
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Ensure nginx_vhost_path exists.] ***
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Add managed vhost config files.] ***
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Remove managed vhost config files.] ***
+skipping: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Remove legacy vhosts.conf file.] ***
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Copy nginx configuration in place.] ***
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/nginx : Ensure nginx service is running as configured.] ***
+fatal: [worker]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xe\" for details.\n"}
+
+PLAY RECAP *********************************************************************
+worker                     : ok=9    changed=0    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   

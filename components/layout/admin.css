@@ -1,0 +1,15 @@
+/* AdminUsers.css */
+.custom-button {
+    background-color: #FFFFD8;
+    color: black;
+  }
+  
+  .send-email-button {
+    background-color: #E0FEFE;
+    color: black;
+  }
+  
+  .delete-button {
+    background-color: #D3EEFF;
+    color: black;
+  }

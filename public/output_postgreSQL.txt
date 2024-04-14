@@ -1,0 +1,41 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : include_tasks] *****
+included: /home/aguirchams/ansible/ansible-roles/applications/database_server/postgres/tasks/debian.yml for node7
+
+TASK [ansible-roles/applications/database_server/postgres : Include vars] ******
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Install packages] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Install python3-psycopg2 using pip] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Check if postgreSQL is initialized] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Initialize PostgreSQL] ***
+skipping: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Start and enable service] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Start PostgreSQL] ***
+changed: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Create db] *********
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : Create db user] ****
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/postgres : include_tasks] *****
+skipping: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=10   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   

@@ -1,0 +1,24 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/applications/kafka : Load OS-specific variables] ***********
+ok: [node7] => (item=/home/aguirchams/ansible/ansible-roles/applications/kafka/vars/../vars/Debian.yml)
+
+TASK [ansible-roles/applications/kafka : Create kafka group] *******************
+ok: [node7]
+
+TASK [ansible-roles/applications/kafka : Create kafka user] ********************
+ok: [node7]
+
+TASK [ansible-roles/applications/kafka : Check if Kafka has already been downloaded and unpacked] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/kafka : Download Apache Kafka] ****************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TimeoutError: The read operation timed out
+fatal: [node7]: FAILED! => {"changed": false, "elapsed": 0, "msg": "failed to create temporary content file: The read operation timed out"}
+
+PLAY RECAP *********************************************************************
+node7                      : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

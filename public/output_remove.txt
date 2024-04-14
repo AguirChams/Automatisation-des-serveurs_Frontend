@@ -1,0 +1,14 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/standardiser_acces/remove : Include vars] ******************
+ok: [node7]
+
+TASK [ansible-roles/standardiser_acces/remove : Remove SSH access] *************
+changed: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

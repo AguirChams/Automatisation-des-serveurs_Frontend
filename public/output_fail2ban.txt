@@ -1,0 +1,38 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/security/fail2ban : install] *******************************
+ok: [node7] => (item=fail2ban)
+
+TASK [ansible-roles/security/fail2ban : Include vars] **************************
+ok: [node7]
+
+TASK [ansible-roles/security/fail2ban : create fail2ban directory] *************
+ok: [node7]
+
+TASK [ansible-roles/security/fail2ban : update configuration file - /etc/fail2ban/fail2ban.local] ***
+ok: [node7]
+
+TASK [ansible-roles/security/fail2ban : update configuration file - /etc/fail2ban/jail.local] ***
+ok: [node7]
+
+TASK [ansible-roles/security/fail2ban : copy filters] **************************
+skipping: [node7]
+
+TASK [ansible-roles/security/fail2ban : copy actions] **************************
+skipping: [node7]
+
+TASK [ansible-roles/security/fail2ban : copy jails] ****************************
+skipping: [node7]
+
+TASK [ansible-roles/security/fail2ban : start and enable service] **************
+ok: [node7]
+
+TASK [ansible-roles/security/fail2ban : start and enable service] **************
+ok: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=8    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   

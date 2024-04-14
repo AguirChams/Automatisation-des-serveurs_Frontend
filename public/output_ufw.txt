@@ -1,0 +1,50 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/security/ufw : facts | set] ********************************
+ok: [node7]
+
+TASK [ansible-roles/security/ufw : check if conntrack exists] ******************
+skipping: [node7]
+
+TASK [ansible-roles/security/ufw : fix dropped ssh sessions | configure kernel] ***
+skipping: [node7]
+
+TASK [ansible-roles/security/ufw : install | dependencies] *********************
+ok: [node7]
+
+TASK [ansible-roles/security/ufw : Include vars] *******************************
+ok: [node7]
+
+TASK [ansible-roles/security/ufw : configure | create (local facts) directory] ***
+changed: [node7]
+
+TASK [ansible-roles/security/ufw : configure | update configuration file(s)] ***
+changed: [node7]
+
+TASK [ansible-roles/security/ufw : configure | update facts.d file(s)] *********
+changed: [node7]
+
+TASK [ansible-roles/security/ufw : configure | reset] **************************
+changed: [node7]
+
+TASK [ansible-roles/security/ufw : configure | default (incoming) policy] ******
+ok: [node7]
+
+TASK [ansible-roles/security/ufw : configure | default (outgoing) policy] ******
+ok: [node7]
+
+TASK [ansible-roles/security/ufw : configure | rules] **************************
+changed: [node7] => (item={'rule': 'allow', 'interface': 'enp0s3', 'to_port': 22, 'protocol': 'tcp'})
+
+TASK [ansible-roles/security/ufw : configure | logging] ************************
+changed: [node7]
+
+RUNNING HANDLER [ansible-roles/security/ufw : reload ufw] **********************
+changed: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=13   changed=7    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   

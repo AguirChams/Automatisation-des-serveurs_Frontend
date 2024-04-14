@@ -1,0 +1,108 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : include_tasks] ****
+skipping: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : include_tasks] ****
+included: /home/aguirchams/ansible/ansible-roles/configuration/monitoring/node_exporter/tasks/debian.yml for node7
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : check if node exporter exist] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : if node exporter exist get version] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : create node exporter user] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : create node exporter config dir] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : download and unzip node exporter if not exist] ***
+skipping: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : move the binary to the final destination] ***
+skipping: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : clean] ************
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : install service] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : meta] *************
+
+TASK [ansible-roles/configuration/monitoring/node_exporter : service always started] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/prometheus : include_tasks] *******
+skipping: [node7]
+
+TASK [ansible-roles/configuration/monitoring/prometheus : include_tasks] *******
+included: /home/aguirchams/ansible/ansible-roles/configuration/monitoring/prometheus/tasks/debian.yml for node7
+
+TASK [ansible-roles/configuration/monitoring/prometheus : install prometheus] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/prometheus : prometheus args] *****
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/prometheus : meta] ****************
+
+TASK [ansible-roles/configuration/monitoring/prometheus : prometheus configuration file] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/prometheus : start prometheus] ****
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : include_tasks] **********
+skipping: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : include_tasks] **********
+included: /home/aguirchams/ansible/ansible-roles/configuration/monitoring/grafana/tasks/debian.yml for node7
+
+TASK [ansible-roles/configuration/monitoring/grafana : Include vars] ***********
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : install gpg] ************
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : Install Grafana] ********
+ok: [node7] => (item=apt-transport-https)
+ok: [node7] => (item=software-properties-common)
+ok: [node7] => (item=wget)
+
+TASK [ansible-roles/configuration/monitoring/grafana : Add Grafana repository] ***
+changed: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : Install Grafana] ********
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : change admin user] ******
+ok: [node7] => (item={'before': '^;admin_user = admin', 'after': 'admin_user = aguirchams'})
+ok: [node7] => (item={'before': '^;admin_password = admin', 'after': 'admin_password = password'})
+
+TASK [ansible-roles/configuration/monitoring/grafana : start service grafana-server] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : wait for service up] ****
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : change admin password for grafana gui] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : add prometheus datasource] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : install node exporter dashboard] ***
+ok: [node7]
+
+TASK [ansible-roles/configuration/monitoring/grafana : activate dashboard for node exporter] ***
+ok: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=27   changed=1    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   

@@ -1,0 +1,35 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : include_tasks] ***
+included: /home/aguirchams/ansible/ansible-roles/applications/database_server/mysql/ansible-role-mysql/tasks/debian.yml for node7
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : Include vars] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : installing Mysql and its dependencies] ***
+ok: [node7] => (item=mysql-server)
+ok: [node7] => (item=mysql-client)
+ok: [node7] => (item=python3-mysqldb)
+ok: [node7] => (item=libmysqlclient-dev)
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : start and enable mysql service] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : creating mysql user] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : enable remote login to mysql] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : Restart mysql] ***
+changed: [node7]
+
+TASK [ansible-roles/applications/database_server/mysql/ansible-role-mysql : include_tasks] ***
+skipping: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=8    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

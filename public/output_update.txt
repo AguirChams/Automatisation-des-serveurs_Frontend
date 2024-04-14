@@ -1,0 +1,11 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/updates&upgrades : Perform a dist-upgrade.] ****************
+fatal: [node7]: FAILED! => {"changed": false, "msg": "'/usr/bin/apt-get dist-upgrade ' failed: E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).\n", "rc": 100, "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nYou might want to run 'apt --fix-broken install' to correct these.\nThe following packages have unmet dependencies:\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "You might want to run 'apt --fix-broken install' to correct these.", "The following packages have unmet dependencies:"]}
+
+PLAY RECAP *********************************************************************
+node7                      : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,26 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/standardiser_acces/access : Include vars] ******************
+ok: [node7]
+
+TASK [ansible-roles/standardiser_acces/access : allow user to have passwordless sudo] ***
+ok: [node7]
+
+TASK [ansible-roles/standardiser_acces/access : add user to sudoers] ***********
+ok: [node7]
+
+TASK [ansible-roles/standardiser_acces/access : Add SSH public key to authorized_keys] ***
+changed: [node7]
+
+TASK [ansible-roles/standardiser_acces/access : Disallow password authentication] ***
+ok: [node7]
+
+TASK [ansible-roles/standardiser_acces/access : allow public key authentication] ***
+ok: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

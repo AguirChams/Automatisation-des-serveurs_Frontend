@@ -1,0 +1,38 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/applications/docker : include_tasks] ***********************
+included: /home/aguirchams/ansible/ansible-roles/applications/docker/tasks/debian.yml for node7
+
+TASK [ansible-roles/applications/docker : install dependencies] ****************
+ok: [node7] => (item=apt-transport-https)
+ok: [node7] => (item=ca-certificates)
+ok: [node7] => (item=curl)
+ok: [node7] => (item=gnupg-agent)
+ok: [node7] => (item=software-properties-common)
+
+TASK [ansible-roles/applications/docker : define gpg key] **********************
+ok: [node7]
+
+TASK [ansible-roles/applications/docker : define repository docker] ************
+ok: [node7]
+
+TASK [ansible-roles/applications/docker : install docker] **********************
+ok: [node7] => (item=docker-ce)
+ok: [node7] => (item=docker-ce-cli)
+ok: [node7] => (item=containerd.io)
+
+TASK [ansible-roles/applications/docker : ensure docker is activated] **********
+ok: [node7]
+
+TASK [ansible-roles/applications/docker : restart docker] **********************
+changed: [node7]
+
+TASK [ansible-roles/applications/docker : include_tasks] ***********************
+skipping: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=8    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

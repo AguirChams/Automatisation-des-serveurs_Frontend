@@ -1,0 +1,29 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/security/modsecurity : Install the Apache mod_security2 module] ***
+ok: [node7]
+
+TASK [ansible-roles/security/modsecurity : enable mod_security2] ***************
+ok: [node7]
+
+TASK [ansible-roles/security/modsecurity : Create audit log directory] *********
+ok: [node7]
+
+TASK [ansible-roles/security/modsecurity : Create audit log file] **************
+changed: [node7]
+
+TASK [ansible-roles/security/modsecurity : Deploy modsecurity.conf file] *******
+ok: [node7]
+
+TASK [ansible-roles/security/modsecurity : Enable mod_security2 config file] ***
+changed: [node7]
+
+RUNNING HANDLER [ansible-roles/security/modsecurity : restart apache2] *********
+changed: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

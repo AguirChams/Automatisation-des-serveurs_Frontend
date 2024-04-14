@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terminal Output</title>
+  <style>
+    #terminal {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      padding: 10px;
+      height: 400px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <h1>Terminal Output</h1>
+  <div id="terminal"></div>
+  <script src="https://cdn.socket.io/4.6.2/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.1/socket.io.js"></script>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="/usr/sbin/mosquitto/mqtt.min.js"></script>
+  <script>
+    const terminalOutput = document.getElementById('terminal');
+    const socket = io(); 
+    socket.on('output', (data) => {
+      terminalOutput.innerHTML += data + '<br>';
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    });
+  </script>
+</body>
+</html>

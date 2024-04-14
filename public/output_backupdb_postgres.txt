@@ -1,0 +1,23 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/backup_database/postgres : Include vars] *******************
+ok: [node7]
+
+TASK [ansible-roles/backup_database/postgres : utility present] ****************
+ok: [node7]
+
+TASK [ansible-roles/backup_database/postgres : Backup directory] ***************
+changed: [node7]
+
+TASK [ansible-roles/backup_database/postgres : Backup db] **********************
+changed: [node7]
+
+TASK [ansible-roles/backup_database/postgres : Downloading backup file to localhost] ***
+changed: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=6    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

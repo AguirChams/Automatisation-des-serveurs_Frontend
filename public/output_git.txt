@@ -1,0 +1,41 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node6]
+
+TASK [ansible-roles/applications/git : Test if git_repository_destination is set correctly] ***
+ok: [node6 -> localhost]
+
+TASK [ansible-roles/applications/git : Test if git_force is set correctly] *****
+ok: [node6 -> localhost]
+
+TASK [ansible-roles/applications/git : Test if git_repositories is set correctly] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/git : Test if item in git_repositories is set correctly] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/git : Test if item in git_repositories with force is set correctly] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/git : Install git] ****************************
+ok: [node6]
+
+TASK [ansible-roles/applications/git : See if the specified user exists] *******
+skipping: [node6]
+
+TASK [ansible-roles/applications/git : Create directory for git configuration] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/git : Place git configuration] ****************
+skipping: [node6]
+
+TASK [ansible-roles/applications/git : Create repository_destination] **********
+skipping: [node6]
+
+TASK [ansible-roles/applications/git : Clone all roles] ************************
+skipping: [node6]
+
+PLAY RECAP *********************************************************************
+node6                      : ok=4    changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   

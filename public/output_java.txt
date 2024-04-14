@@ -1,0 +1,41 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/applications/java : Include OS-specific variables for Fedora or FreeBSD.] ***
+skipping: [node7]
+
+TASK [ansible-roles/applications/java : Include version-specific variables for CentOS/RHEL.] ***
+skipping: [node7]
+
+TASK [ansible-roles/applications/java : Include version-specific variables for Ubuntu.] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/java : Include version-specific variables for Debian.] ***
+ok: [node7]
+
+TASK [ansible-roles/applications/java : Define java_packages.] *****************
+ok: [node7]
+
+TASK [ansible-roles/applications/java : include_tasks] *************************
+skipping: [node7]
+
+TASK [ansible-roles/applications/java : include_tasks] *************************
+included: /home/aguirchams/ansible/ansible-roles/applications/java/tasks/setup-Debian.yml for node7
+
+TASK [ansible-roles/applications/java : Ensure 'man' directory exists.] ********
+ok: [node7]
+
+TASK [ansible-roles/applications/java : Ensure Java is installed.] *************
+ok: [node7]
+
+TASK [ansible-roles/applications/java : include_tasks] *************************
+skipping: [node7]
+
+TASK [ansible-roles/applications/java : Set JAVA_HOME if configured.] **********
+skipping: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=7    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   

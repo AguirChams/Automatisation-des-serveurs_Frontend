@@ -1,0 +1,50 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : Include vars] ****************************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : install rsync] ***************************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : create backup script directory] **********
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : create backup directory] *****************
+changed: [node7]
+
+TASK [ansible-roles/backup_projects : write backup script] *********************
+changed: [node7]
+
+TASK [ansible-roles/backup_projects : write backup-impl script] ****************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : write rsync-filter script] ***************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : restore previous backup] *****************
+changed: [node7]
+
+TASK [ansible-roles/backup_projects : create cron directory] *******************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : create cron job] *************************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : write service script] ********************
+ok: [node7]
+
+TASK [ansible-roles/backup_projects : compress directory into zip] *************
+changed: [node7]
+
+TASK [ansible-roles/backup_projects : Download backup directory to localhost] ***
+changed: [node7]
+
+TASK [ansible-roles/backup_projects : add backup service to default run level and start] ***
+ok: [node7]
+
+PLAY RECAP *********************************************************************
+node7                      : ok=15   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

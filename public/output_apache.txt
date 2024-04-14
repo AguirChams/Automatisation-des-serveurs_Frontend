@@ -1,0 +1,20 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/apache : Include vars] **************
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/apache : Install prerequisites] *****
+ok: [worker] => (item=aptitude)
+
+TASK [ansible-roles/applications/webserver/apache : Install Apache] ************
+ok: [worker]
+
+TASK [ansible-roles/applications/webserver/apache : Create document root] ******
+fatal: [worker]: FAILED! => {"changed": false, "gid": 0, "group": "root", "mode": "0755", "msg": "chown failed: failed to look up user worker", "owner": "root", "path": "/var/www/test.mobelite.fr", "size": 4096, "state": "directory", "uid": 0}
+
+PLAY RECAP *********************************************************************
+worker                     : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,92 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Include vars] *********************
+ok: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Upgrade system] *******************
+ok: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install nginx] ********************
+ok: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : install letsencrypt] **************
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : create letsencrypt directory] *****
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Remove default nginx config] ******
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install system nginx config] ******
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install nginx site for letsencrypt requests] ***
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Reload nginx to activate letsencrypt site] ***
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Create letsencrypt certificate] ***
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Generate dhparams] ****************
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install nginx site for specified site] ***
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Reload nginx to activate specified site] ***
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Add letsencrypt cronjob for cert renewal] ***
+changed: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Include vars] *********************
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Upgrade system] *******************
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install nginx] ********************
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : install letsencrypt] **************
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : create letsencrypt directory] *****
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Remove default nginx config] ******
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install system nginx config] ******
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install nginx site for letsencrypt requests] ***
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Reload nginx to activate letsencrypt site] ***
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Create letsencrypt certificate] ***
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Generate dhparams] ****************
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Install nginx site for specified site] ***
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Reload nginx to activate specified site] ***
+skipping: [worker]
+
+TASK [ansible-roles/security/certbot/nginx : Add letsencrypt cronjob for cert renewal] ***
+skipping: [worker]
+
+PLAY RECAP *********************************************************************
+worker                     : ok=15   changed=11   unreachable=0    failed=0    skipped=14   rescued=0    ignored=0   

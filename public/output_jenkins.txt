@@ -1,0 +1,92 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Include OS-Specific variables] ******
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : include_tasks] **********************
+skipping: [node6]
+
+TASK [ansible-roles/applications/jenkins : include_tasks] **********************
+included: /home/aguirchams/ansible/ansible-roles/applications/jenkins/tasks/setup-Debian.yml for node6
+
+TASK [ansible-roles/applications/jenkins : Include vars] ***********************
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Include vars] ***********************
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Ensure dependencies are installed.] ***
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Download Jenkins key] ***************
+changed: [node6]
+
+TASK [ansible-roles/applications/jenkins : Add Jenkins key to keyring] *********
+changed: [node6]
+
+TASK [ansible-roles/applications/jenkins : append the Debian package repository address to the servers sources.list] ***
+changed: [node6]
+
+TASK [ansible-roles/applications/jenkins : Download specific Jenkins version.] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/jenkins : Check if we downloaded a specific version of Jenkins.] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/jenkins : Install our specific version of Jenkins.] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/jenkins : Ensure Jenkins is installed.] *******
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Check if jenkins_init_file exists.] ***
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Define jenkins_pkg_url] *************
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : install openjdk] ********************
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Update APT cache] *******************
+changed: [node6]
+
+TASK [ansible-roles/applications/jenkins : Start jenkins service] **************
+changed: [node6]
+
+TASK [ansible-roles/applications/jenkins : allow ufw] **************************
+changed: [node6]
+
+TASK [ansible-roles/applications/jenkins : display administrator password] *****
+changed: [node6]
+
+TASK [ansible-roles/applications/jenkins : Set admin password] *****************
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Install extra pip packages desired] ***
+ok: [node6] => (item=unzip)
+ok: [node6] => (item=python-pip)
+ok: [node6] => (item=wget)
+
+TASK [ansible-roles/applications/jenkins : Ensure jenkins_init_file exists.] ***
+skipping: [node6]
+
+TASK [ansible-roles/applications/jenkins : Modify variables in init file.] *****
+ok: [node6] => (item={'option': 'JENKINS_ARGS', 'value': '--prefix='})
+ok: [node6] => (item={'option': 'JAVA_ARGS', 'value': '-Djenkins.install.runSetupWizard=false'})
+
+TASK [ansible-roles/applications/jenkins : Ensure jenkins_home /var/lib/jenkins exists.] ***
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Set the Jenkins home directory.] ****
+ok: [node6]
+
+TASK [ansible-roles/applications/jenkins : Immediately restart Jenkins on init config changes.] ***
+fatal: [node6]: FAILED! => {"changed": false, "msg": "Unable to restart service jenkins: Job for jenkins.service failed because a timeout was exceeded.\nSee \"systemctl status jenkins.service\" and \"journalctl -xeu jenkins.service\" for details.\n"}
+
+PLAY RECAP *********************************************************************
+node6                      : ok=22   changed=7    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
